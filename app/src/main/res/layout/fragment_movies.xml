@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/moviesFragment"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/grey_50"
+        app:title="Bienvenue sur MovieFlix"
+        app:titleTextColor="@color/primary_movie_flix"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/menu_movies" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/main_scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            android:padding="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <include
+                    android:id="@+id/search_bar_container"
+                    layout="@layout/component_search_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="3dp" />
+
+                <include
+                    android:id="@+id/filter_button_container"
+                    layout="@layout/component_filter_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+            
+
+            <Space android:layout_width="match_parent" android:layout_height="16dp" />
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/grey_400" />
+            <Space android:layout_width="match_parent" android:layout_height="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pour Vous"
+                android:textSize="20sp"
+                android:textColor="@color/grey_800"
+                android:textStyle="bold" />
+
+            <Space android:layout_width="match_parent" android:layout_height="8dp" />
+            
+            <TextView
+                android:id="@+id/empty_recommendations_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Veuillez ajouter des films en favoris"
+                android:textSize="16sp"
+                android:textColor="#FF0000"
+                android:padding="16dp"
+                android:gravity="center"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/for_you_list"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/component_movie_tile" />
+
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/grey_400" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/movie_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:padding="8dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3"
+            tools:listitem="@layout/component_movie_tile" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

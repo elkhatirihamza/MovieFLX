@@ -1,0 +1,6 @@
+<resources>
+    <array name="initial_year_range">
+        <item>1950.0</item>
+        <item>2025.0</item>
+    </array>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/moviesFragment">
+
+
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.iacontrol.movieflx.ui.MoviesFragment"
+        android:label="Films">
+        <action
+            android:id="@+id/action_moviesFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/likedMoviesFragment"
+        android:name="com.iacontrol.movieflx.ui.LikedMoviesFragment"
+        android:label="Mes films favoris" />
+
+
+
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.iacontrol.movieflx.ui.MovieDetailFragment"
+        android:label="Détails du film">  <argument
+        android:name="movieData"
+        app:argType="com.iacontrol.movieflx.data.model.Movie" />
+    </fragment>
+
+</navigation>

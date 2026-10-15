@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="Filtres"
+        android:textColor="@color/primary_movie_flix"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Genre"
+        android:textSize="14sp"
+        android:textColor="@android:color/black" />
+
+    <Spinner
+        android:id="@+id/spinner_genre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:paddingVertical="12dp"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Note Minimale"
+        android:textSize="14sp"
+        android:textColor="@android:color/black" />
+
+    <RatingBar
+        android:id="@+id/rating_bar_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:rating="0"
+        android:isIndicator="false"
+        style="?android:attr/ratingBarStyleIndicator"
+        android:progressTint="@color/primary_movie_flix"
+        android:secondaryProgressTint="@android:color/transparent"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plage d'Années"
+        android:textSize="14sp"
+        android:textColor="@android:color/black" />
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/range_slider_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:valueFrom="1900.0"
+        android:valueTo="2025.0"
+        android:stepSize="1.0"
+        app:values="@array/initial_year_range"
+        app:thumbTint="@color/primary_movie_flix"
+        android:contentDescription="Plage d'années de sortie"
+        app:labelBehavior="withinBounds"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trier par"
+        android:textSize="14sp"
+        android:textColor="@android:color/black" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group_sort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_top_rated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Note globale"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            app:chipBackgroundColor="@color/chip_bg_selector"
+            app:chipSurfaceColor="@color/chip_text_selector"
+            app:chipStrokeColor="@color/primary_movie_flix"
+            app:checkedIconVisible="false"/>
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_recent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date de sortie"
+            app:chipSurfaceColor="@color/chip_text_selector"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            app:chipBackgroundColor="@color/chip_bg_selector"
+            app:chipStrokeColor="@color/primary_movie_flix"
+            app:checkedIconVisible="false"/>
+
+
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <Space android:layout_width="match_parent" android:layout_height="24dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_apply_filters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Appliquer"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/primary_movie_flix"
+        app:cornerRadius="12dp" />
+
+</LinearLayout>

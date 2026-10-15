@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/moviesFragment"
+        android:icon="@drawable/ic_movie_filled"
+        android:color="@color/primary_movie_flix"
+        android:title="Films" />
+    <item
+        android:id="@+id/likedMoviesFragment"
+        android:icon="@drawable/ic_star_filled"
+        android:color="#FF0000"
+        android:title="Favoris" />
+</menu>
